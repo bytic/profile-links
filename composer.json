@@ -1,0 +1,42 @@
+{
+  "name": "bytic/profile-links",
+  "type": "library",
+  "license": "MIT",
+  "description": "icons",
+  "keywords": [],
+  "homepage": "https://github.com/bytic/profile-links",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ByTIC\\ProfileLinks\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ByTIC\\ProfileLinks\\Tests\\": "tests/src",
+      "ByTIC\\ProfileLinks\\Tests\\Fixtures\\": "tests/fixtures"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "bytic/package-base": "^1.0|^2.0",
+    "bytic/models-smart-properties": "^1.0|^2.0",
+    "bytic/migrations": "~0.13",
+    "bytic/orm-behaviors": "^1.0|^2.0",
+    "bytic/utility": "^1.0",
+    "utopia-php/domains": "~0.7"
+  },
+  "require-dev": {
+    "bytic/phpqatools": "^1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
