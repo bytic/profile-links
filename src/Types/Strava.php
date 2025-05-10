@@ -10,4 +10,8 @@ class Strava extends AbstractType
 {
     public const NAME = 'strava';
 
+    protected function validDomains(): array
+    {
+        return ['strava.com'];
+    }
 }

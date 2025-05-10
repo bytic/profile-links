@@ -1,14 +1,14 @@
 <?php
 
 use ByTIC\ProfileLinks\Links\Models\ProfileLinks;
-use ByTIC\ProfileLinks\Utility\FormsBuilderModels;
+use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
 
 return [
     'models' => [
-        FormsBuilderModels::LINKS => ProfileLinks::class,
+        ProfileLinksModels::LINKS => ProfileLinks::class,
     ],
     'tables' => [
-        FormsBuilderModels::LINKS => ProfileLinks::TABLE,
+        ProfileLinksModels::LINKS => ProfileLinks::TABLE,
     ],
     'database' => [
         'connection' => 'main',

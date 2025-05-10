@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ByTIC\ProfileLinks\Utility;
 
-use Bytic\ProfileLinks\ProfileLinksServiceProvider;
+use ByTIC\ProfileLinks\ProfileLinksServiceProvider;
 use Exception;
 
 /**

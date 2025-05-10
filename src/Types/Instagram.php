@@ -8,4 +8,8 @@ namespace ByTIC\ProfileLinks\Types;
 class Instagram extends AbstractType
 {
     public const NAME = 'instagram';
+    protected function validDomains(): array
+    {
+        return ['instagram.com'];
+    }
 }

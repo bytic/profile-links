@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use ByTIC\ProfileLinks\Utility\FormsBuilderModels;
+use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
 use ByTIC\ProfileLinks\Utility\PackageConfig;
 use Phinx\Migration\AbstractMigration;
 
@@ -23,7 +23,7 @@ final class FormsTable extends AbstractMigration
      */
     public function change(): void
     {
-        $table_name = PackageConfig::tableName(FormsBuilderModels::LINKS);
+        $table_name = PackageConfig::tableName(ProfileLinksModels::LINKS);
         $exists = $this->hasTable($table_name);
         if ($exists) {
             return;
@@ -33,6 +33,8 @@ final class FormsTable extends AbstractMigration
         $table
             ->addColumn('subject', 'string')
             ->addColumn('subject_id', 'integer')
+            ->addColumn('name', 'string')
+            ->addColumn('icon', 'string')
             ->addColumn('url', 'string')
             ->addColumn('type', 'string')
             ->addColumn('modified', 'timestamp', [

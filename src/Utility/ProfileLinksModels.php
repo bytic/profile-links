@@ -10,7 +10,7 @@ use Nip\Records\RecordManager;
 /**
  * Class NotifierBuilderModels.
  */
-class FormsBuilderModels extends ModelFinder
+class ProfileLinksModels extends ModelFinder
 {
     public const LINKS = 'links';
 
