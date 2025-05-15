@@ -33,6 +33,11 @@
     "utopia-php/domains": "~0.7"
   },
   "require-dev": {
+    "bytic/admin-base": "^1.0",
+    "bytic/controllers": "^1.0 || ^2.0",
+    "bytic/controllers-extra": "^1.0 || ^2.0",
+    "bytic/translation": "^1.0||^2.0",
+    "bytic/form": "^1.0||^2.0",
     "bytic/phpqatools": "^1.0"
   },
   "config": {

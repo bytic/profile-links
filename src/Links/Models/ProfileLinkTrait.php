@@ -3,6 +3,7 @@
 namespace ByTIC\ProfileLinks\Links\Models;
 
 use ByTIC\Models\SmartProperties\RecordsTraits\HasTypes\RecordTrait as HasTypesRecordTrait;
+use Nip\Records\AbstractModels\Record;
 
 trait ProfileLinkTrait
 {
@@ -10,14 +11,21 @@ trait ProfileLinkTrait
 
     public ?string $url = null;
 
-    public function getUrl(): ?string
+    public function getExternalUrl(): ?string
     {
         return $this->url;
     }
 
-    public function setUrl(?string $url): static
+    public function setExternalUrl(?string $url): static
     {
         $this->url = $url;
+        return $this;
+    }
+
+    public function setSubjectRecord(Record $subject)
+    {
+        $this->subject = $subject->getManager()->getMorphName();
+        $this->subject_id = $subject->id;
         return $this;
     }
 }

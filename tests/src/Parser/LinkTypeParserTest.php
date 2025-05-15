@@ -29,7 +29,7 @@ class LinkTypeParserTest extends TestCase
         ModelLocator::set(ProfileLinks::class, $repository);
 
         $link = new ProfileLink();
-        $link->setUrl($url);
+        $link->setExternalUrl($url);
         LinkTypeParser::parseType($link);
 
         $type = $link->getType();

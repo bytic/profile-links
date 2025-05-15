@@ -18,7 +18,7 @@ class LinkTypeParser
      */
     public static function parseType($link, $url = null)
     {
-        $url = $url ?? $link->getUrl();
+        $url = $url ?? $link->getExternalUrl();
         $parsedUrl = parse_url($url);
         if (empty($parsedUrl['host'])) {
             return;

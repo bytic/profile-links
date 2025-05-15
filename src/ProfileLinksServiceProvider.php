@@ -20,6 +20,7 @@ class ProfileLinksServiceProvider extends BaseBootableServiceProvider
     public function register()
     {
     }
+
     public function migrations(): ?string
     {
         if (PackageConfig::shouldRunMigrations()) {
@@ -36,5 +37,10 @@ class ProfileLinksServiceProvider extends BaseBootableServiceProvider
     {
         return [
         ];
+    }
+
+    protected function translationsPath(): string
+    {
+        return PathsHelpers::lang();
     }
 }

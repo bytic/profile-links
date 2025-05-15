@@ -8,7 +8,7 @@ use Phinx\Migration\AbstractMigration;
 /**
  *
  */
-final class FormsTable extends AbstractMigration
+final class ProfileLinksTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -45,8 +45,8 @@ final class FormsTable extends AbstractMigration
                 'default' => 'CURRENT_TIMESTAMP',
             ]);
 
-        $table->addIndex(['tenant']);
-        $table->addIndex(['tenant_id']);
+        $table->addIndex(['subject']);
+        $table->addIndex(['subject_id']);
 
         $table->save();
     }

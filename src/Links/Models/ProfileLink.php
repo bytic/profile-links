@@ -12,4 +12,5 @@ class ProfileLink extends Record
     {
         // TODO: Implement getRegistry() method.
     }
+
 }
