@@ -10,4 +10,9 @@ class ProfileLinks extends RecordManager
     use ProfileLinksTrait;
 
     public const TABLE = ProfileLinksTable::NAME;
+
+    public function getRootNamespace()
+    {
+        return 'ByTIC\ProfileLinks\Links\Models\\';
+    }
 }

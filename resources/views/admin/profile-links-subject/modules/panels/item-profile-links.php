@@ -23,7 +23,7 @@ $card = Card::make()
     )
     ->wrapBody(false)
     ->withViewContent(
-        '/profile-links/modules/lists/subscription',
+        '/profile_links/modules/lists/subject',
         ['items' => $items]
     );
 ?>

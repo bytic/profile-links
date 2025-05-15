@@ -35,7 +35,7 @@ class PathsHelpers
 
     public static function lang($path = null): string
     {
-        return static::resources() . '/assets' . $path;
+        return static::resources() . '/lang' . $path;
     }
 
     public static function views($path = null): string
