@@ -2,6 +2,7 @@
 
 namespace ByTIC\ProfileLinks\Types;
 
+use ByTIC\Icons\Icons;
 use ByTIC\Models\SmartProperties\Properties\Types\Generic;
 use  ByTIC\ProfileLinks\Links\Models\ProfileLink;
 use Utopia\Domains\Domain;
@@ -17,6 +18,12 @@ abstract class AbstractType extends Generic
     {
         return __NAMESPACE__;
     }
+
+    public function getIconHtml(): string
+    {
+        return '<i class="fas fa-external-link-alt"></i>';
+    }
+
     /**
      * @param Domain $domain
      * @return bool

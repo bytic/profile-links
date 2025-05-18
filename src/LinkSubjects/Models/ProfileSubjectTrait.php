@@ -4,7 +4,10 @@ namespace ByTIC\ProfileLinks\LinkSubjects\Models;
 
 use ByTIC\Models\SmartProperties\RecordsTraits\HasTypes\RecordTrait as HasTypesRecordTrait;
 
-trait ProfileLinkTrait
+/**
+ *
+ */
+trait ProfileSubjectTrait
 {
     use HasTypesRecordTrait;
 

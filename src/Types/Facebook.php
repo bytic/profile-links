@@ -2,6 +2,7 @@
 
 namespace ByTIC\ProfileLinks\Types;
 
+use ByTIC\Icons\Icons;
 use Utopia\Domains\Domain;
 
 /**
@@ -11,6 +12,11 @@ use Utopia\Domains\Domain;
 class Facebook extends AbstractType
 {
     public const NAME = 'facebook';
+
+    public function getIconHtml(): string
+    {
+        return '<i class="fab fa-facebook-f"></i>';
+    }
 
     protected function validDomains(): array
     {

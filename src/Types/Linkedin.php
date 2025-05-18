@@ -9,6 +9,12 @@ namespace ByTIC\ProfileLinks\Types;
 class Linkedin extends AbstractType
 {
     public const NAME = 'linkedin';
+
+    public function getIconHtml(): string
+    {
+        return '<i class="fab fa-linkedin-in"></i>';
+    }
+
     protected function validDomains(): array
     {
         return ['linkedin.com'];

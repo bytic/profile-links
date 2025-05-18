@@ -12,6 +12,22 @@ trait ProfileLinksTrait
 {
     use HasTypesRecordsTrait;
 
+    public function initRelations()
+    {
+        parent::initRelations();
+        $this->initRelationsProfileLinks();
+    }
+
+    protected function initRelationsProfileLinks()
+    {
+        $this->initRelationsSubject();
+    }
+
+    protected function initRelationsSubject()
+    {
+        $this->morphTo('ProfileSubject', ['morphTypeField' => 'subject', 'morphPrefix' => 'subject']);
+    }
+
     protected function generateTable()
     {
         return PackageConfig::tableName(ProfileLinksModels::LINKS, ProfileLinks::TABLE);

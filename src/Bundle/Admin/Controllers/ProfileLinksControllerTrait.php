@@ -27,15 +27,15 @@ trait ProfileLinksControllerTrait
         return $item;
     }
 
-    public function view()
-    {
-        /** @var ProfileLink $item */
-        $item = $this->initExistingItem();
-
-        $this->payload()->with([
-            'item' => $item,
-        ]);
-    }
+//    public function view()
+//    {
+//        /** @var ProfileLink $item */
+//        $item = $this->initExistingItem();
+//
+//        $this->payload()->with([
+//            'item' => $item,
+//        ]);
+//    }
 
     protected function generateModelName(): string
     {
@@ -50,9 +50,14 @@ trait ProfileLinksControllerTrait
 //        $method = $this->getRequest()->getMethod();
 //        $this->checkAndSetForeignModelInRequest($method);
 
-        $subject = $item->getSubject();
+        $subject = $item->getProfileSubject();
         $this->checkAndSetForeignModelInRequest($subject);
 
+        $this->setAfterUrlFlash(
+            $subject->getURL(),
+            $subject->getManager()->getController(),
+            ['after-add', 'after-edit', 'after-delete']
+        );
         return parent::checkItemAccess($item);
     }
 

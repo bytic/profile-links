@@ -8,7 +8,7 @@ use ByTIC\ProfileLinks\Utility\PathsHelpers;
 use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
 use ByTIC\ProfileLinks\Utility\PackageConfig;
 
-trait ProfileLinksTrait
+trait ProfileSubjectsTrait
 {
 
     public function initRelations()
