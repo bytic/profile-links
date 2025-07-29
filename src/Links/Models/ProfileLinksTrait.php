@@ -7,6 +7,7 @@ use ByTIC\ProfileLinks\Types\AbstractType;
 use ByTIC\ProfileLinks\Utility\PathsHelpers;
 use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
 use ByTIC\ProfileLinks\Utility\PackageConfig;
+use Nip\Database\Connections\Connection;
 
 trait ProfileLinksTrait
 {
@@ -41,5 +42,13 @@ trait ProfileLinksTrait
     public function getTypeNamespace(): string
     {
         return AbstractType::namespace();
+    }
+
+    /**
+     * @return Connection
+     */
+    protected function newDbConnection()
+    {
+        return app('db')->connection(\ByTIC\ProfileLinks\Utility\PackageConfig::databaseConnection());
     }
 }
