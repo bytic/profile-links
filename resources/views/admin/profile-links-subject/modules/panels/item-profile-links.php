@@ -6,7 +6,7 @@ use ByTIC\Icons\Icons;
 use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
 
 $items = $this->get('profile_links');
-$subject = $this->get('item');
+$subject = $subject ?? $this->get('item');
 
 $card = Card::make()
     ->withView($this)
