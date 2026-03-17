@@ -5,7 +5,7 @@ declare(strict_types=1);
 /** @var \Nip\View\View $this */
 $redirectUrl = $this->get('redirect_url') ?? '';
 $redirectUrlEscaped = htmlspecialchars($redirectUrl, ENT_QUOTES, 'UTF-8');
-$redirectUrlJson = json_encode($redirectUrl);
+$redirectUrlJson = json_encode($redirectUrl, JSON_HEX_TAG | JSON_HEX_AMP);
 
 ?><!DOCTYPE html>
 <html lang="en">
