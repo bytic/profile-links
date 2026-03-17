@@ -30,6 +30,7 @@ trait ClicksLogsControllerTrait
         LogClick::fromRequest($url, $request)->execute();
 
         $this->payload()->with(['redirect_url' => $url]);
+        $this->setLayout('blank');
     }
 
     protected function forward404($url)
