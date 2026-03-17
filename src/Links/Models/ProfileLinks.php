@@ -11,6 +11,8 @@ class ProfileLinks extends RecordManager
 
     public const TABLE = ProfileLinksTable::NAME;
 
+    public const CONTROLLER = 'profile_links-links';
+
     public function getRootNamespace()
     {
         return 'ByTIC\ProfileLinks\Links\Models\\';

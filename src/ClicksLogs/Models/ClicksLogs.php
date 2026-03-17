@@ -12,6 +12,7 @@ class ClicksLogs extends RecordManager
     use ClicksLogsTrait;
 
     public const TABLE = ClicksLogsTable::NAME;
+    public const CONTROLLER = 'profile_links-clicks_logs';
 
     public function getRootNamespace(): string
     {

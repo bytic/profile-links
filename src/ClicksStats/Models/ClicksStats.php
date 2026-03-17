@@ -13,6 +13,8 @@ class ClicksStats extends RecordManager
 
     public const TABLE = ClicksStatsTable::NAME;
 
+    public const CONTROLLER = 'profile_links-clicks_stats';
+
     public function getRootNamespace(): string
     {
         return 'ByTIC\ProfileLinks\ClicksStats\Models\\';
