@@ -67,11 +67,14 @@ class LogClick extends Action
 
     protected function updateStats(): void
     {
-        $stat = FindOrCreateClicksStat::forUrlRefererDate(
+        $stat = FindOrCreateClicksStat
+            ::forUrlRefererDate(
             $this->url,
             $this->referer,
             date('Y-m-d')
-        )->fetchOrCreate();
+        )
+            ->orCreate()
+            ->fetch();
 
         $stat->incrementClicks();
         $stat->save();

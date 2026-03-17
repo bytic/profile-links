@@ -12,6 +12,6 @@ class CreateTrackableExternalLink extends Action
     public static function for(string $url)
     {
         $params = ['url' => urlencode($url)];
-        return ProfileLinksModels::clicksLogs()->compileURL('redirect', $params, 'frontend');
+        return ProfileLinksModels::clicksLogs()->compileURL('external', $params, 'frontend');
     }
 }

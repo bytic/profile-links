@@ -5,6 +5,16 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="ByTIC\ProfileLinks\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/fixtures" isTestSource="true" packagePrefix="ByTIC\ProfileLinks\Tests\Fixtures\" />
       <sourceFolder url="file://$MODULE_DIR$/tests/src" isTestSource="true" packagePrefix="ByTIC\ProfileLinks\Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bytic/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bytic/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bytic/logger" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bytic/newrelic" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/asset" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php85" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/utopia-php/validators" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

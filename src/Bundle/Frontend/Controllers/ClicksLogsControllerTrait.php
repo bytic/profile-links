@@ -11,23 +11,29 @@ trait ClicksLogsControllerTrait
 {
     use AbstractControllerTrait;
 
-    public function redirect(): void
+    public function external(): void
     {
-        $url = $this->getRequest()->get('url');
+        $request = $this->getRequest();
+        $url = $request->get('url');
 
         if (empty($url) || !filter_var($url, FILTER_VALIDATE_URL)) {
-            $this->forward404();
+            $this->forward404($url);
             return;
         }
 
         $scheme = strtolower(parse_url($url, PHP_URL_SCHEME) ?? '');
         if (!in_array($scheme, ['http', 'https'], true)) {
-            $this->forward404();
+            $this->forward404($url);
             return;
         }
 
-        LogClick::fromRequest($url, Request::createFromGlobals())->execute();
+        LogClick::fromRequest($url, $request)->execute();
 
         $this->payload()->with(['redirect_url' => $url]);
+    }
+
+    protected function forward404($url)
+    {
+        die('Invalid URL:' .$url);
     }
 }
