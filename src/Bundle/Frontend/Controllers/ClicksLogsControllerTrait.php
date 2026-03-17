@@ -14,7 +14,8 @@ trait ClicksLogsControllerTrait
     public function external(): void
     {
         $request = $this->getRequest();
-        $url = $request->get('url');
+        $url = $request->query->get('url');
+        $url = $url ? urldecode($url) : null;
 
         if (empty($url) || !filter_var($url, FILTER_VALIDATE_URL)) {
             $this->forward404($url);
