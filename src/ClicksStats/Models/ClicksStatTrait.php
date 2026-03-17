@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace ByTIC\ProfileLinks\ClicksStats\Models;
 
+use ByTIC\ProfileLinks\Base\Models\Behaviours\Timestampable\TimestampableTrait;
+
 trait ClicksStatTrait
 {
+
+    use TimestampableTrait;
     public ?string $url = null;
     public ?string $referer = null;
     public ?string $date = null;

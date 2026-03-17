@@ -3,6 +3,7 @@
 namespace ByTIC\ProfileLinks\Links\Models;
 
 use ByTIC\Models\SmartProperties\RecordsTraits\HasTypes\RecordTrait as HasTypesRecordTrait;
+use ByTIC\ProfileLinks\Base\Models\Behaviours\Timestampable\TimestampableTrait;
 use ByTIC\ProfileLinks\LinkSubjects\Models\ProfileSubjectTrait;
 use Nip\Records\AbstractModels\Record;
 
@@ -12,6 +13,7 @@ use Nip\Records\AbstractModels\Record;
 trait ProfileLinkTrait
 {
     use HasTypesRecordTrait;
+    use TimestampableTrait;
 
     public ?string $url = null;
 

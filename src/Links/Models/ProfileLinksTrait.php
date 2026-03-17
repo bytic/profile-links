@@ -3,6 +3,8 @@
 namespace ByTIC\ProfileLinks\Links\Models;
 
 use ByTIC\Models\SmartProperties\RecordsTraits\HasTypes\RecordsTrait as HasTypesRecordsTrait;
+use ByTIC\ProfileLinks\Base\Models\Behaviours\HasDatabaseConnectionTrait;
+use ByTIC\ProfileLinks\Base\Models\Behaviours\Timestampable\TimestampableManagerTrait;
 use ByTIC\ProfileLinks\Types\AbstractType;
 use ByTIC\ProfileLinks\Utility\PathsHelpers;
 use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
@@ -12,6 +14,8 @@ use Nip\Database\Connections\Connection;
 trait ProfileLinksTrait
 {
     use HasTypesRecordsTrait;
+    use TimestampableManagerTrait;
+    use HasDatabaseConnectionTrait;
 
     public function initRelations()
     {
@@ -44,11 +48,4 @@ trait ProfileLinksTrait
         return AbstractType::namespace();
     }
 
-    /**
-     * @return Connection
-     */
-    protected function newDbConnection()
-    {
-        return app('db')->connection(\ByTIC\ProfileLinks\Utility\PackageConfig::databaseConnection());
-    }
 }

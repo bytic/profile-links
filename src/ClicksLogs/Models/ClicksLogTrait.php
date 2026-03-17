@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace ByTIC\ProfileLinks\ClicksLogs\Models;
 
+use ByTIC\ProfileLinks\Base\Models\Behaviours\Timestampable\TimestampableTrait;
+
 trait ClicksLogTrait
 {
+    use TimestampableTrait;
+
     public ?string $url = null;
     public ?string $referer = null;
     public ?string $useragent = null;
