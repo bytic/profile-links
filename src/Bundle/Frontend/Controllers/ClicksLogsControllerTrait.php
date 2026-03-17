@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace ByTIC\ProfileLinks\Bundle\Frontend\Controllers;
 
 use ByTIC\ProfileLinks\ClicksLogs\Actions\LogClick;
+use Symfony\Component\HttpFoundation\Request;
 
-trait ExternalRedirectControllerTrait
+trait ClicksLogsControllerTrait
 {
     use AbstractControllerTrait;
 
-    public function external(): void
+    public function redirect(): void
     {
         $url = $this->getRequest()->get('url');
 
@@ -25,7 +26,7 @@ trait ExternalRedirectControllerTrait
             return;
         }
 
-        LogClick::fromRequest($url)->execute();
+        LogClick::fromRequest($url, Request::createFromGlobals())->execute();
 
         $this->payload()->with(['redirect_url' => $url]);
     }

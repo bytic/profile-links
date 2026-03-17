@@ -19,8 +19,9 @@ final class ClicksLogsTable extends AbstractMigration
             return;
         }
 
-        $table = $this->table($table_name);
+        $table = $this->table($table_name, ['id' => false, 'primary_key' => ['id']]);
         $table
+            ->addColumn('id', 'biginteger', ['identity' => true, 'signed' => false])
             ->addColumn('url', 'string')
             ->addColumn('referer', 'string', ['null' => true, 'default' => null])
             ->addColumn('useragent', 'string', ['null' => true, 'default' => null])

@@ -7,6 +7,7 @@ namespace ByTIC\ProfileLinks\ClicksLogs\Actions;
 use Bytic\Actions\Action;
 use ByTIC\ProfileLinks\ClicksStats\Actions\FindOrCreateClicksStat;
 use ByTIC\ProfileLinks\Utility\ProfileLinksModels;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  *
@@ -18,13 +19,13 @@ class LogClick extends Action
     protected string $userAgent = '';
     protected string $ip = '';
 
-    public static function fromRequest(string $url): static
+    public static function fromRequest(string $url, Request $request): static
     {
         $action = new static();
         $action->url = $url;
-        $action->referer = $_SERVER['HTTP_REFERER'] ?? '';
-        $action->userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
-        $action->ip = static::resolveIp();
+        $action->referer = (string) ($request->headers->get('referer') ?? '');
+        $action->userAgent = (string) ($request->headers->get('User-Agent') ?? '');
+        $action->ip = (string) ($request->getClientIp() ?? '');
 
         return $action;
     }
@@ -74,15 +75,5 @@ class LogClick extends Action
 
         $stat->incrementClicks();
         $stat->save();
-    }
-
-    protected static function resolveIp(): string
-    {
-        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            $parts = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-            return trim($parts[0]);
-        }
-
-        return $_SERVER['REMOTE_ADDR'] ?? '';
     }
 }
